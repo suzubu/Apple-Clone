@@ -16,7 +16,7 @@ These instructions will get your project running locally.
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/your-username/apple-clone.git
+git clone https://github.com/suzubu/Apple-Clone.git
 
 # 2. Navigate into the project folder
 cd apple-clone
