@@ -1,4 +1,4 @@
-# 📘 Apple iPhone 15 Pro — Product Showcase Clone
+# 📘 Apple Clone Showcase
 
 > A high-fidelity animated clone of Apple’s iPhone 15 Pro product page, built to replicate Apple’s sleek product storytelling using modern web technologies.
 
@@ -18,13 +18,10 @@ These instructions will get your project running locally.
 # 1. Clone the repo
 git clone https://github.com/suzubu/apple-clone-showcase.git
 
-# 2. Navigate into the project folder
-cd apple-clone
-
-# 3. Install dependencies
+# 2. Install dependencies
 npm install
 
-# 4. Run the development server
+# 3. Start dev server
 npm run dev
 ```
 
