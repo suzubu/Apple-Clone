@@ -111,4 +111,4 @@ MIT — feel free to use and adapt!
 
 ## 🙋‍♀️ Author
 
-Made with ☕ + 🎧 by [Suzubu](https://github.com/suzubu)
+Made with ☕ + 🎧 by [suzubu](https://github.com/suzubu)
