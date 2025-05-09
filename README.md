@@ -111,5 +111,4 @@ MIT — feel free to use and adapt!
 
 ## 🙋‍♀️ Author
 
-Made with ☕ + 🎧 by [Suzy Dev](https://github.com/suzydev)  
-Feel free to reach out or contribute!
+Made with ☕ + 🎧 by [Suzubu](https://github.com/suzubu)
