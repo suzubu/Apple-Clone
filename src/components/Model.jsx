@@ -1,5 +1,5 @@
 import { useGSAP } from "@gsap/react";
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import ModelView from "./ModelView";
 import { useState } from "react";

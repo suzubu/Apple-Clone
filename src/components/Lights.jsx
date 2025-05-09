@@ -2,71 +2,58 @@ import { Environment, Lightformer } from "@react-three/drei";
 
 const Lights = () => {
   return (
-    // group different lights and lightformers. We can use group to organize lights, cameras, meshes, and other objects in the scene.
-    <group name="lights">
-      {/**
-       * @description Environment is used to create a background environment for the scene
-       * https://github.com/pmndrs/drei?tab=readme-ov-file#environment
-       */}
-      <Environment resolution={256}>
-        <group>
-          {/**
-           * @description Lightformer used to create custom lights with various shapes and properties in a 3D scene.
-           * https://github.com/pmndrs/drei?tab=readme-ov-file#lightformer
-           */}
-          <Lightformer
-            form="rect"
-            intensity={10}
-            position={[-1, 0, -10]}
-            scale={10}
-            color={"#495057"}
-          />
-          <Lightformer
-            form="rect"
-            intensity={10}
-            position={[-10, 2, 1]}
-            scale={10}
-            rotation-y={Math.PI / 2}
-          />
-          <Lightformer
-            form="rect"
-            intensity={10}
-            position={[10, 0, 1]}
-            scale={10}
-            rotation-y={Math.PI / 2}
-          />
-        </group>
-      </Environment>
+    // The Environment component provides HDR-like global lighting and reflections
+    <Environment resolution={512}>
+      {/* Lightformer: Top light strip */}
+      <Lightformer
+        intensity={4}
+        position={[0, 4, 0]}
+        scale={[10, 1, 1]}
+        onUpdate={(self) => self.lookAt(0, 0, 0)} // Aim light at scene center
+      />
 
-      {/**
-       * @description spotLight is used to create a light source positioned at a specific point
-       * in the scene that emits light in a specific direction.
-       * https://threejs.org/docs/#api/en/lights/SpotLight
-       */}
-      <spotLight
-        position={[-2, 10, 5]}
-        angle={0.15}
-        penumbra={1} // the penumbra is the soft edge of a shadow cast by a point light
-        decay={0} // the amount the light dims as it moves away from the source
-        intensity={Math.PI * 0.2} // the light intensity
-        color={"#f8f9fa"}
+      {/* Lightformer: Left side fill light */}
+      <Lightformer
+        intensity={2}
+        position={[-5, 0, 1]}
+        scale={[2, 5, 1]}
+        onUpdate={(self) => self.lookAt(0, 0, 0)}
       />
+
+      {/* Lightformer: Right side fill light */}
+      <Lightformer
+        intensity={2}
+        position={[5, 1, 1]}
+        scale={[2, 5, 1]}
+        onUpdate={(self) => self.lookAt(0, 0, 0)}
+      />
+
+      {/* Lightformer: Front soft light for general fill */}
+      <Lightformer
+        intensity={2}
+        position={[0, 2, 5]}
+        scale={[10, 10, 1]}
+        onUpdate={(self) => self.lookAt(0, 0, 0)}
+      />
+
+      {/* Lightformer: Floor bounce light */}
+      <Lightformer
+        intensity={1}
+        position={[0, -3, 0]}
+        scale={[10, 1, 1]}
+        onUpdate={(self) => self.lookAt(0, 0, 0)}
+      />
+
+      {/* Additional spotlight to highlight top edges */}
       <spotLight
-        position={[0, -25, 10]}
-        angle={0.15}
+        position={[0, 5, 5]}
+        angle={0.35}
         penumbra={1}
-        decay={0}
-        intensity={Math.PI * 0.2}
-        color={"#f8f9fa"}
+        intensity={2}
+        castShadow
+        shadow-mapSize={1024}
       />
-      <spotLight
-        position={[0, 15, 5]}
-        angle={0.15}
-        penumbra={1}
-        decay={0.1}
-        intensity={Math.PI * 3}
-      />
-    </group>
+    </Environment>
   );
 };
 
